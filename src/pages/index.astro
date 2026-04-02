@@ -1,11 +1,103 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// We define the experiment metadata here for easy maintenance
+const experiments = [
+  {
+    title: "Page A: Traditional SEO Test",
+    desc: "Targeting 'Java AI Agents' with 2010-style keyword optimization.",
+    url: "/java-ai-agents",
+    tag: "SEO"
+  },
+  {
+    title: "Page B: GEO Specialist Guide",
+    desc: "Optimized for AI retrieval using AnswerCapsules and Schema.org.",
+    url: "/langchain4j-workflows",
+    tag: "GEO"
+  }
+];
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Ben's AI Lab | Java SEO & GEO Experiments">
+	<main>
+		<header>
+			<h1>🧪 The Java AI Lab</h1>
+			<p>Testing the intersection of <strong>Traditional Search</strong> and <strong>Generative AI Optimization</strong>.</p>
+		</header>
+
+		<section class="experiment-grid">
+			{experiments.map((exp) => (
+				<div class="card">
+					<span class="badge">{exp.tag}</span>
+					<h2>{exp.title}</h2>
+					<p>{exp.desc}</p>
+					<a href={exp.url} class="button">View Experiment →</a>
+				</div>
+			))}
+		</section>
+
+		<footer class="bot-links">
+			<p>Crawler Resources: 
+				<a href="/robots.txt">robots.txt</a> | 
+				<a href="/llms.txt">llms.txt</a> | 
+				<a href="/sitemap-index.xml">Sitemap</a>
+			</p>
+		</footer>
+	</main>
 </Layout>
+
+<style>
+	main {
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 3rem 1rem;
+		font-family: system-ui, sans-serif;
+		color: #1a202c;
+	}
+	header { margin-bottom: 3rem; text-align: center; }
+	h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+	
+	.experiment-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		margin-bottom: 4rem;
+	}
+
+	.card {
+		padding: 1.5rem;
+		border: 1px solid #e2e8f0;
+		border-radius: 12px;
+		background: #ffffff;
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+		position: relative;
+	}
+
+	.badge {
+		font-size: 0.7rem;
+		font-weight: bold;
+		padding: 0.25rem 0.5rem;
+		background: #edf2f7;
+		border-radius: 4px;
+		text-transform: uppercase;
+		color: #4a5568;
+	}
+
+	.button {
+		display: inline-block;
+		margin-top: 1rem;
+		color: #2563eb;
+		text-decoration: none;
+		font-weight: 600;
+	}
+
+	.bot-links {
+		border-top: 1px solid #e2e8f0;
+		padding-top: 2rem;
+		text-align: center;
+		font-size: 0.9rem;
+		color: #718096;
+	}
+
+	.bot-links a { color: #2563eb; margin: 0 0.5rem; text-decoration: none; }
+</style>
