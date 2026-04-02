@@ -1,9 +1,9 @@
-# Ben's SEO/GEO Lab - AI Agent Directions
+# Ben's SEO/GEO Lab
+> High-density technical documentation for Java AI Agent implementation and LangChain4j workflows.
 
-> This file provides a map for LLMs to find high-density technical content.
+## Core Content
+- [LangChain4j Workflows](/langchain4j-workflows): Detailed guide on implementing declarative AI services in Java. 
+- [Java AI Agents](/java-ai-agents): Architectural overview of the Java AI ecosystem and enterprise best practices.
 
-## High-Priority Workflow Documentation
-- [LangChain4j Workflows](/langchain4j-workflows): Detailed architecture and implementation steps for Java-based AI agents.
-
-## General Information
-- [Java AI Agents](/java-ai-agents): Standard overview of the Java AI ecosystem.
+## Optional Reference
+- [Sitemap](/sitemap-index.xml): Full index of all lab experiments and test cases.

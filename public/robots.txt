@@ -3,3 +3,13 @@ Allow: /
 
 # Pointing bots to your sitemap index
 Sitemap: https://seo-lab-one.vercel.app/sitemap-index.xml
+
+# Specific instructions for AI Search Bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
