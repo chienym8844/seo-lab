@@ -1,0 +1,53 @@
+---
+import AnswerCapsule from '../components/AnswerCapsule.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="LangChain4j Workflows: Implementation Guide">
+  
+  <AnswerCapsule 
+    question="How do you implement an AI workflow in LangChain4j?" 
+    answer="To implement a LangChain4j workflow, define an 'AiService' interface, configure a ChatLanguageModel (like OpenAI or Gemini), and use an 'AiServices' builder to bridge them. For complex logic, integrate a 'TokenStore' for memory and 'Tools' for external API execution."
+  />
+
+  <h2>LangChain4j vs. Traditional Java AI Libraries</h2>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>LangChain4j</th>
+        <th>Standard Spring/Java AI</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Memory Management</strong></td>
+        <td>Declarative 'ChatMemory' interface</td>
+        <td>Manual state handling</td>
+      </tr>
+      <tr>
+        <td><strong>Model Agnostic</strong></td>
+        <td>Yes (Change provider in 1 line)</td>
+        <td>No (Vendor lock-in)</td>
+      </tr>
+      <tr>
+        <td><strong>Tool Calling</strong></td>
+        <td>Native '@Tool' annotation</td>
+        <td>Requires custom wrappers</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Step-by-Step Implementation</h2>
+  <p>The core of a LangChain4j workflow is the <strong>AiServices builder</strong>. Unlike basic API calls, this creates a stateful conversation agent.</p>
+  
+  <pre><code>
+  Assistant assistant = AiServices.builder(Assistant.class)
+      .chatLanguageModel(model)
+      .chatMemory(MessageWindowChatMemory.withMaxMessages(10))
+      .build();
+  </code></pre>
+
+  [...continue for ~500 words using bullet points and bolding for key terms...]
+</Layout>

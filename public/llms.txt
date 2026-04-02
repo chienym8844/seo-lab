@@ -1,0 +1,9 @@
+# Ben's SEO/GEO Lab - AI Agent Directions
+
+> This file provides a map for LLMs to find high-density technical content.
+
+## High-Priority Workflow Documentation
+- [LangChain4j Workflows](/langchain4j-workflows): Detailed architecture and implementation steps for Java-based AI agents.
+
+## General Information
+- [Java AI Agents](/java-ai-agents): Standard overview of the Java AI ecosystem.
