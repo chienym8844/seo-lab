@@ -1,5 +1,8 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
-// https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+  // CRITICAL: Replace with your actual Vercel URL or custom domain
+  site: 'https://seo-lab-one.vercel.app/', 
+  integrations: [sitemap()],
+});
