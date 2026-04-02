@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Pointing bots to your sitemap index
+Sitemap: https://seo-lab-one.vercel.app/sitemap-index.xml
