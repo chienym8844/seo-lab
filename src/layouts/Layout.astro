@@ -2,7 +2,8 @@
 // Define the interface for props
 interface Props {
 	title: string;
-	description?: string; // Add this line
+	description?: string;
+	schema?: string;
 }
 
 const { title, description = "Default description for my AI Lab" } = Astro.props;
@@ -18,7 +19,7 @@ const { title, description = "Default description for my AI Lab" } = Astro.props
 		
 		<title>{title}</title>
 		<meta name="description" content={description} />
-		
+		{schema && <script type="application/ld+json" set:html={schema} />}
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />

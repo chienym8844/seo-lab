@@ -1,10 +1,44 @@
 ---
 import AnswerCapsule from '../components/AnswerCapsule.astro';
 import Layout from '../layouts/Layout.astro';
+
+const pageSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "How to Build LangChain4j Workflows",
+  "description": "A technical guide to implementing AI agents using the LangChain4j framework in Java.",
+  "author": {
+    "@type": "Person",
+    "name": "Ben Chien" // Connects your authority to the content
+  },
+  "dependencies": "Maven, Java 17+, LangChain4j",
+  "proficiencyLevel": "Expert",
+  "mainEntity": {
+    "@type": "HowTo",
+    "name": "Implementing a LangChain4j AiService",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "text": "Add langchain4j-open-ai dependency to pom.xml"
+      },
+      {
+        "@type": "HowToStep",
+        "text": "Define an interface for the AiService"
+      },
+      {
+        "@type": "HowToStep",
+        "text": "Initialize the ChatLanguageModel and build the service"
+      }
+    ]
+  }
+});
 ---
 
-<Layout title="How to Build LangChain4j Workflows: A Technical Guide for Java Developers"
-description="Step-by-step guide to implementing LangChain4j workflows. Includes AnswerCapsules and data tables for optimized AI retrieval and agentic service creation.">
+<Layout 
+    title="How to Build LangChain4j Workflows: A Technical Guide for Java Developers"
+    description="Step-by-step guide to implementing LangChain4j workflows. Includes AnswerCapsules and data tables for optimized AI retrieval and agentic service creation."
+    schema={pageSchema}
+>
   
   <AnswerCapsule 
     question="How do you implement an AI workflow in LangChain4j?" 
