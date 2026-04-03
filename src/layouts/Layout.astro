@@ -7,6 +7,7 @@ interface Props {
 }
 
 const { title, description = "Default description for my AI Lab", schema } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -20,6 +21,7 @@ const { title, description = "Default description for my AI Lab", schema } = Ast
 		<title>{title}</title>
 		<meta name="description" content={description} />
 		{schema && <script type="application/ld+json" set:html={schema} />}
+		<link rel="canonical" href={canonicalURL} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />
