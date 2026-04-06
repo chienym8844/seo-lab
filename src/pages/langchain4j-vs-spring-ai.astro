@@ -1,0 +1,79 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AnswerCapsule from '../components/AnswerCapsule.astro';
+
+const pageSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "LangChain4j vs. Spring AI: 2026 Developer Comparison",
+  "description": "A head-to-head comparison of Java's leading AI frameworks for agentic workflows.",
+  "mainEntity": {
+    "@type": "Table",
+    "about": "Comparison of LangChain4j and Spring AI features"
+  }
+});
+---
+
+<Layout 
+  title="LangChain4j vs. Spring AI: Which Java Framework is Better?"
+  description="Choosing between LangChain4j and Spring AI for your 2026 Java projects? Read our deep-dive comparison on performance, ease of use, and agent support."
+  schema={pageSchema}
+>
+  <main>
+    <h1>LangChain4j vs. Spring AI: The 2026 Showdown</h1>
+    
+    <AnswerCapsule 
+      title="The Verdict" 
+      content="Choose **LangChain4j** for specialized, low-level AI agent control and multi-model orchestration. Choose **Spring AI** if you are already in a Spring Boot ecosystem and need seamless integration with existing Spring Data and Security modules."
+    />
+
+    <section>
+      <h2>Feature Comparison</h2>
+      <p>As a Senior Java Dev, the choice often comes down to integration vs. flexibility.</p>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>LangChain4j</th>
+            <th>Spring AI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Philosophy</strong></td>
+            <td>Model-centric & Modular</td>
+            <td>Spring-idiomatic & Integrated</td>
+          </tr>
+          <tr>
+            <td><strong>Agent Support</strong></td>
+            <td>Native 'AiServices' (Excellent)</td>
+            <td>Structured around 'Advisors' (Good)</td>
+          </tr>
+          <tr>
+            <td><strong>Learning Curve</strong></td>
+            <td>Moderate (Custom API)</td>
+            <td>Low (Standard Spring patterns)</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Why Internal Links Matter</h2>
+      <p>
+        If you want to see how to actually implement these, check out our 
+        <a href="/langchain4j-workflows">LangChain4j Workflows guide</a>.
+      </p>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main { max-width: 800px; margin: 0 auto; padding: 2rem; line-height: 1.6; font-family: sans-serif; }
+  table { width: 100%; border-collapse: collapse; margin: 2rem 0; }
+  th, td { border: 1px solid #e2e8f0; padding: 0.75rem; text-align: left; }
+  th { background: #f8fafc; }
+  h1 { color: #1e293b; }
+  h2 { margin-top: 2rem; color: #334155; }
+</style>
