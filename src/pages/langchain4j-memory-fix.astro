@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AnswerCapsule from '../components/AnswerCapsule.astro';
+
+const pageSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Fixing Token Limit Errors in LangChain4j Agents",
+  "description": "How to implement ChatMemory windowing to prevent 'context window exceeded' errors in Java AI apps."
+});
+---
+
+<Layout 
+  title="Fixing LangChain4j Context Window Errors"
+  description="Struggling with token limits? Learn how to use MessageWindowChatMemory in LangChain4j to keep your Java AI agents running smoothly."
+  schema={pageSchema}
+>
+  <main>
+    <h1>Fixing 'Context Window Exceeded' in LangChain4j</h1>
+    
+    <AnswerCapsule 
+      title="Quick Solution" 
+      content="To prevent token overflow, implement `MessageWindowChatMemory.withMaxMessages(10)`. This ensures your agent only remembers the last 10 exchanges, staying well within model limits."
+    />
+
+    <section>
+      <h2>The Code Fix</h2>
+      <pre><code>
+// Add this to your AiService builder
+ChatMemory chatMemory = MessageWindowChatMemory.withMaxMessages(10);
+
+MyAgent agent = AiServices.builder(MyAgent.class)
+    .chatLanguageModel(model)
+    .chatMemory(chatMemory)
+    .build();
+      </code></pre>
+    </section>
+
+    <p>Return to our <a href="/">AI Experiments Home</a>.</p>
+  </main>
+</Layout>
