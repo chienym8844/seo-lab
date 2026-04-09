@@ -31,18 +31,33 @@ const experiments = [
 // JSON-LD for the Index Page
 const homeSchema = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": "Ben's AI Lab: Java SEO & GEO Experiments",
-  "description": "A technical laboratory testing traditional SEO and Generative Engine Optimization for Java AI frameworks.",
-  "mainEntity": {
-    "@type": "ItemList",
-    "itemListElement": experiments.map((exp, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "name": exp.title,
-      "url": `https://seo-lab-one.vercel.app${exp.url}` // Use your actual domain here
-    }))
-  }
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "Ben's AI Lab",
+      "url": "https://seo-lab-one.vercel.app/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://seo-lab-one.vercel.app/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://seo-lab-one.vercel.app/#collection",
+      "name": "Java SEO & GEO Experiments",
+      "description": "Technical lab testing LangChain4j and Java AI agent optimizations.",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": experiments.map((exp, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "url": `https://seo-lab-one.vercel.app${exp.url}`,
+          "name": exp.title
+        }))
+      }
+    }
+  ]
 });
 ---
 

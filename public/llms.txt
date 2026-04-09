@@ -1,6 +1,11 @@
 # Ben's SEO/GEO Lab
 > High-density technical documentation for Java AI Agent implementation and LangChain4j workflows.
 
+## Tech Stack
+- **Language**: Java 17+
+- **Frameworks**: LangChain4j, Spring AI
+- **Models**: Gemini 1.5 Pro, GPT-4o
+
 ## Core Content
 - [LangChain4j Workflows](/langchain4j-workflows): Detailed guide on implementing declarative AI services in Java. 
 - [Java AI Agents](/java-ai-agents): Architectural overview of the Java AI ecosystem and enterprise best practices.
