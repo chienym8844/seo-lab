@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const terms = [
+  {
+    word: "Agentic Workflow",
+    definition: "An AI architecture where the model has the autonomy to use tools, reason through multi-step tasks, and self-correct without constant human intervention.",
+    link: "/java-ai-agents"
+  },
+  {
+    word: "AnswerCapsule",
+    definition: "A concise, structured block of content designed to be directly ingested by Generative Search Engines to answer a user's query.",
+    link: "/"
+  },
+  {
+    word: "Context Window",
+    definition: "The total amount of text (tokens) an LLM can process at one time. Managing this is critical in Java AI apps to avoid memory overflow.",
+    link: "/langchain4j-memory-fix"
+  },
+  {
+    word: "RAG (Retrieval-Augmented Generation)",
+    definition: "A technique that grants an LLM access to external data (like a vector database) to provide more accurate and context-aware responses.",
+    link: "/langchain4j-workflows"
+  }
+];
+
+const glossarySchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "name": "Java AI & SEO Glossary",
+  "hasDefinedTerm": terms.map(t => ({
+    "@type": "DefinedTerm",
+    "name": t.word,
+    "description": t.definition
+  }))
+});
+---
+
+<Layout 
+  title="AI & SEO Glossary | Java AI Lab" 
+  description="Technical definitions for AI Agents, RAG, and GEO optimization."
+  schema={glossarySchema}
+>
+  <main>
+    <h1>Technical Glossary</h1>
+    <p>Essential terms for the 2026 AI and Search landscape.</p>
+
+    <dl class="glossary-list">
+      {terms.map(t => (
+        <div class="term-group">
+          <dt><strong>{t.word}</strong></dt>
+          <dd>
+            {t.definition} 
+            <br />
+            <a href={t.link} class="ref-link">Learn more →</a>
+          </dd>
+        </div>
+      ))}
+    </dl>
+  </main>
+</Layout>
+
+<style>
+  main { max-width: 800px; margin: 0 auto; padding: 2rem; font-family: sans-serif; }
+  .glossary-list { margin-top: 2rem; }
+  .term-group { margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem; }
+  dt { font-size: 1.4rem; color: #1e293b; margin-bottom: 0.5rem; }
+  dd { color: #475569; line-height: 1.6; margin-left: 0; }
+  .ref-link { font-size: 0.9rem; color: #2563eb; text-decoration: none; display: inline-block; margin-top: 0.5rem; }
+</style>
