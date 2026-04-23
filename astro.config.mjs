@@ -6,6 +6,6 @@ export default defineConfig({
   output: 'static', 
   adapter: vercel(),
   // CRITICAL: Replace with your actual Vercel URL or custom domain
-  site: 'https://seo-lab-one.vercel.app', 
+  site: 'https://seo-lab-one.vercel.app/', 
   integrations: [sitemap()],
 });
